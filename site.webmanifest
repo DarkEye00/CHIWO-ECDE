@@ -1,0 +1,12 @@
+{
+  "name": "CHIWO Early Childhood Education Initiative",
+  "short_name": "CHIWO",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#fff6de",
+  "theme_color": "#0e5a6e",
+  "icons": [
+    { "src": "assets/brand/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/brand/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

@@ -1,0 +1,19 @@
+# Original photos and videos: large, and may show children, so keep them out of Git
+assets/raw/
+
+# Web photos of children and parents, and the share image (a class photo). The GitHub repo is
+# public, so these stay out until every parent has signed a consent form (TODO.md).
+assets/img/*
+!assets/img/.gitkeep
+assets/brand/og-image.jpg
+
+# Local secrets and logs
+.env
+*.log
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

@@ -1,0 +1,15 @@
+# Security headers. Netlify and Cloudflare Pages both read this file when you deploy.
+#
+# Content-Security-Policy lists every outside service the site may use: Google Fonts,
+# Formspree (enquiry form) and Google Maps (contact page). If you add another service
+# (analytics, a chat widget, a YouTube embed), add its domain to the matching directive
+# or browsers will block it. The sha256 value allows the one-line script in each page's
+# <head>; if you edit that script, update the hash (see README.md).
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-e2g5HkZP+fghbsY1m7moq4GopOo7zRRaAHNyQ2Q7oSI='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://formspree.io; frame-src https://www.google.com https://maps.google.com; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000
