@@ -5,7 +5,8 @@ A static website for CHIWO's daycare and ECDE school in Mathare No. 10, Nairobi.
 Before launch, work through **[TODO.md](TODO.md)**: it lists every default the school must confirm, and every setup step.
 
 ```
-index.html, about.html, programmes.html, admissions.html, gallery.html, contact.html, 404.html
+index.html, about.html, programmes.html, admissions.html, gallery.html, contact.html,
+support.html, safeguarding.html, 404.html
 css/styles.css        all styling; brand colours and fonts are at the top
 js/main.js            mobile menu, enquiry form, click-to-load map
 js/gallery.js         gallery page (reads data/gallery.json)
@@ -31,7 +32,7 @@ Then open http://localhost:8000.
 
 ## Changing text
 
-Open the page's `.html` file and edit the words between the tags. The header, footer and WhatsApp button are repeated in all 7 pages, so to change something that appears everywhere (a phone number, the hours, a menu label), use **Replace in Files** in VS Code (Ctrl+Shift+H).
+Open the page's `.html` file and edit the words between the tags. The header, footer, icons and WhatsApp button are repeated in all 9 pages, so to change something that appears everywhere (a phone number, the hours, a menu label), use **Replace in Files** in VS Code (Ctrl+Shift+H).
 
 Details the school hasn't confirmed yet (founding year, hours, daycare fee, term dates and so on) are filled in with typical defaults for a Kenyan ECDE centre. TODO.md lists each one with its exact text, so search for that text to find it.
 
@@ -122,6 +123,17 @@ The parent quotes are on the home page (`index.html`, under `Testimonials`). Eac
   magick assets/raw/testimonials/NAME.jpg -auto-orient -strip -resize 160x160 -quality 80 assets/img/NAME-160.webp
   ```
   Then change `NAME` in the block's `src` and `srcset`.
+
+## Our team
+
+The staff are on `about.html`, under `Our team`. Each person is a `<li class="member">` with their photo, name, role, qualification and years of experience. To add someone, copy a whole `<li>…</li>` block and change the text.
+
+Team photos are portraits, 4 wide by 5 tall. Crop the photo to that shape (head and shoulders, with the school sign behind if possible), save the original in `assets/raw/staff/`, then make two WebP copies:
+```
+magick assets/raw/staff/NAME.jpg -auto-orient -strip -resize 800x1000 -quality 80 assets/img/NAME-800.webp
+magick assets/raw/staff/NAME.jpg -auto-orient -strip -resize 400x500 -quality 80 assets/img/NAME-400.webp
+```
+The line above the cards ("almost 40 years of experience") adds up everyone's years, so update it when the team changes.
 
 ## Logo and share image
 

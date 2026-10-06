@@ -7,6 +7,12 @@ assets/img/*
 !assets/img/.gitkeep
 assets/brand/og-image.jpg
 
+# Loose photos in the top folder (e.g. saved from WhatsApp) are never site files; site images live in assets/
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+
 # Local secrets and logs
 .env
 *.log

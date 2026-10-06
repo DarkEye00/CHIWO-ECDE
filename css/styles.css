@@ -564,6 +564,12 @@ mark.todo {
 }
 .reason h3 { margin: 0.2rem 0 0.35rem; }
 .reason p { margin: 0; }
+@media (min-width: 64em) {
+  .reasons--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+/* One-line items beside a small tick block (impact, safeguarding commitments) */
+.reasons--ticks { gap: 1.25rem 2rem; }
+.reasons--ticks .reason { align-items: center; }
 
 .growth {
   display: grid;
@@ -730,6 +736,7 @@ mark.todo {
 }
 .page-header h1 { max-width: 20ch; }
 .page-header .lead { max-width: 60ch; margin-bottom: 0; }
+.page-header .lead:not(:last-child) { margin-bottom: 1em; }
 
 .statement {
   max-width: 38ch;
@@ -787,6 +794,31 @@ mark.todo {
     repeating-linear-gradient(to bottom, transparent 0 calc(var(--rule) - 1px), var(--teal-100) calc(var(--rule) - 1px) var(--rule)); }
 }
 
+/* Our team: photo beside the name on phones, three portraits in a row on wider screens */
+.team { display: grid; gap: 1.5rem; margin: 0; padding: 0; list-style: none; }
+.member {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+}
+.member__photo {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: var(--radius);
+  background: var(--teal-50);
+  box-shadow: 0 6px 0 var(--gold);
+}
+.member h3 { margin: 0 0 0.2rem; }
+.member__role { margin: 0 0 0.2rem; color: var(--green); font-weight: 700; }
+.member__meta { margin: 0; color: var(--ink-soft); }
+@media (min-width: 48em) {
+  .team { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+  .member { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .member__photo { margin-bottom: 0.5rem; }
+}
+
 /* Programmes */
 .jump {
   display: flex;
@@ -838,6 +870,19 @@ mark.todo {
 }
 .programme__icon { width: 3.75rem; height: 3.75rem; }
 .programme h2 { margin-bottom: 0.2em; }
+.programme__body--plain { padding-top: 1.5rem; }
+
+/* The Holiday Programme runs across both columns: photo beside the text */
+@media (min-width: 48em) {
+  .programme--wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+  .programme--wide .programme__photo { height: 100%; aspect-ratio: auto; }
+  .programme--wide .programme__body { align-self: center; padding: 2rem 2.5rem; }
+  .programme--wide .programme__badge { margin-top: 0; }
+}
 
 .age {
   display: inline-block;
@@ -946,6 +991,7 @@ mark.todo {
 }
 .card h2 { font-size: var(--step-2); margin-bottom: 0.75rem; }
 .card > .icon-block { margin-bottom: 1.25rem; }
+.card--narrow { max-width: 46rem; }
 
 .fees {
   width: 100%;
@@ -1171,6 +1217,15 @@ html.has-lightbox { overflow: hidden; }
   font-weight: 700;
 }
 
+.follow { display: flex; flex-wrap: wrap; gap: 0 1.25rem; margin: 0; padding: 0; list-style: none; }
+.follow a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  font-weight: 700;
+}
+
 .field { display: grid; gap: 0.35rem; margin-bottom: 1.25rem; }
 .field label { font-weight: 700; }
 .field__optional { color: var(--ink-soft); font-weight: 400; }
@@ -1296,6 +1351,19 @@ html.has-lightbox { overflow: hidden; }
   line-height: 1.25;
 }
 .footer__motto { color: var(--cream); }
+
+.social { display: flex; gap: 0.625rem; margin: 0; padding: 0; list-style: none; }
+.social__link {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: rgb(255 246 222 / 0.12);
+  color: var(--gold);
+}
+.social__link:hover { background: var(--gold); color: var(--teal-deep); }
+.social__link .icon { width: 1.35rem; height: 1.35rem; }
 .footer__title { margin-bottom: 1rem; font-size: var(--step-1); }
 
 .footer__contact { display: grid; gap: 0.75rem; margin: 0; padding: 0; list-style: none; }
